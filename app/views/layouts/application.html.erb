@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Espen Sommer Eide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <div class="container">
+
+    <p id='notice'><%= notice %></p>
+
+    <div class="titleDiv">
+          <p class="title"> <%= link_to 'Espen Sommer Eide – Selected Works', projects_path %>  <br><br><br></p>
+    </div>
+
+
+    <%= yield %>
+
+  </div>
+  <div class="container">
+    <div class="titleDiv">
+
+    <% if current_user %>
+    <p><br><%= link_to 'New Project', new_project_path %><br>
+    <%= link_to 'Log Out', logout_path %><br>
+      Logged in as <%= current_user.email %></p>
+
+    <% else %>
+      <p><br><%= link_to 'Log In', login_path %></p>
+    <% end %>
+  </div></div>
+  </body>
+</html>

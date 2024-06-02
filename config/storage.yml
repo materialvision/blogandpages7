@@ -1,0 +1,19 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+google:
+  service: GCS
+  project: sommerhomepics
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+  bucket: sommerbucket
+
+google_dev:
+  service: GCS
+  project: sommerhomepics
+  credentials: <%= Rails.root.join("config/secrets/sommerhomepics.json") %>
+  bucket: sommerbucket

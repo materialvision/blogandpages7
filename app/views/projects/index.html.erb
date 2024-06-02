@@ -1,0 +1,21 @@
+<div class="empty1">  </div>
+
+    <% @projects.each do |project| %>
+    <%= link_to project do %><br><br>
+    <table><tr>
+          <strong><%= project.title %></strong><br>
+          <p><%= project.info %></p>
+          <% if current_user %>
+          <p>
+          Importance:<%= project.importance %><br>
+          <%= link_to 'Edit', edit_project_path(project) %><br>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          </p>
+        </tr>
+
+      </table>
+
+    <br class="linebreak">
+    <% end %>
+    <% end %>
