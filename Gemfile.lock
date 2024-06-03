@@ -263,6 +263,8 @@ GEM
     ruby-vips (2.2.1)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -354,6 +356,7 @@ DEPENDENCIES
   psych (< 4)
   puma (~> 6.0.2)
   rails (~> 7.1)
+  sass-rails (~> 6)
   sassc-rails
   selenium-webdriver
   spring
